@@ -1,6 +1,7 @@
 body {
 	background-image: url("pics/circuit.jpg");
 }
+/*Fixed header*/
 .header {
 	background-color: #00ccff;
 	position: fixed;
@@ -9,6 +10,7 @@ body {
 	border-radius: 10px;
 	top:0;
 }
+/*Header buttons*/
 .button {
 	background-color: #00ccff;
 	color:#000000;
@@ -26,18 +28,21 @@ body {
 	text-decoration: none;
 	color:#000000;
 }
+/*Used for main contents of a page*/
 .main {
-	width:99%;
+	width:100%;
 	color:#FFFFFF;
 	height:20em;
 	clear:both;
 	font-size: 2em;
 	text-align: center;
 }
+/*This wrapper sits under the fixed header bar*/
 .wrapper {
 	width: 980px;
 	height: 5em;
 }
+/*For bubble buttons*/
 .bubble {
 	background-color: #003380;
 	border-radius: 100%;
@@ -47,4 +52,11 @@ body {
 	width:50%;
 	padding: 12% 12% 12% 12%;
 	margin: 2% 2% 2% 2%;
+}
+/*Home content box*/
+.home {
+	background-color: #00ccff;
+	color:#000000;
+	height:99%;
+	width:100%;
 }

@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	$('.button').hover(
+	$('.button').hover( //Hover function for header buttons
 		function(){
 			$(this).css('background-color', '#00a3cc');
 			$(this).css('color', '#f7f7f7');			
@@ -9,7 +9,7 @@ $(document).ready(function(){
 			$(this).css('color', '#000000');
 		}
 	);
-	$('.bubble').hover (
+	$('.bubble').hover ( //Hover function for bubble buttons
 		function(){
 			$(this).css('height', '67%');
 			$(this).css('width','52%');
