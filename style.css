@@ -7,7 +7,7 @@ body {
 	height: 5em;
 	width: 99%;
 	border-radius: 10px;
-	top:-1em;
+	top:0;
 }
 .button {
 	background-color: #2226B6;
@@ -27,17 +27,14 @@ body {
 	color:#000000;
 }
 .main {
-	background-color: #000000;
 	width:99%;
-	height:200em;
+	color:#FFFFFF;
+	height:20em;
+	clear:both;
+	font-size: 2em;
+	text-align: center;
 }
-.about {
-	background-color: #FFFFFF;
-	width:99%;
-	height:200em;
-}
-.contact{
-	background-color: #333333;
-	width:99%;
-	height: 200em;
+.wrapper {
+	width: 980px;
+	height: 5em;
 }
