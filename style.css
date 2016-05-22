@@ -4,7 +4,7 @@ body {
 .header {
 	background-color: #2226B6;
 	position: fixed;
-	height: 5%;
+	height: 5em;
 	width: 99%;
 	border-radius: 10px;
 }
@@ -19,5 +19,9 @@ body {
 	margin-right: .1%;
 	margin-left: .1%;
 	text-align: center;
-	font-size: 200%;
+	font-size: 2em;
+}
+.button-links {
+	text-decoration: none;
+	color:#000000;
 }
