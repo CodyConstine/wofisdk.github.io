@@ -11,13 +11,11 @@ $(document).ready(function(){
 	);
 	$('.bubble').hover ( //Hover function for bubble buttons
 		function(){
-			$(this).css('height', '67%');
-			$(this).css('width','52%');
+			var id = $(this).attr('id');
 			$(this).css('background-color', '#00ccff');
+			$("."+id+" div").css('background-color', "#003380");
 		},
 		function(){
-			$(this).css('height', '65%');
-			$(this).css('width','50%');
 			$(this).css('background-color', '#003380');
 		}
 	);
