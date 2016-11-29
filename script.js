@@ -107,15 +107,16 @@
     var loadDayTanks = function(){
         var tableLength = dayTanks.length;
         for(var i = 0; i< tableLength; i++){
-            $dayTankTable.append("<tr id='dayRowTank"+i+"'></tr>");
-            var $row = $("#dayRowTank"+i);
+            $dayTankTable.append("<tr id='dayRowTank"+dayTanks[i].name+"'></tr>");
+
             $.ajax({
                 url:"https://us.api.battle.net/wow/character/"+dayTanks[i].server+"/"+dayTanks[i].name,
                 data:{"locale":"en_US", "apikey":"seegnhzdsayxgag54ue4neg484n2eggj", "fields": "items,talents"},
-                async:false
+                //async:false
             })
             .done(function(results){
                 console.log(results);
+                var $row = $("#dayRowTank"+results.name);
                 $row.append("<td><img src='http://render-api-us.worldofwarcraft.com/static-render/us/"+results.thumbnail+"' id='playerIMG'></img><p id='playerName'>"+results.name+"</p></td>");
                 $row.append("<td><img src='iconpng/"+results.class+".png'></img></td>");
                 $row.append("<td><p>"+results.talents[0].spec.name+"</p></td>");
@@ -127,15 +128,16 @@
     var loadDayHeals = function(){
         var tableLength = dayHeals.length;
         for(var i = 0; i< tableLength; i++){
-            $dayHealTable.append("<tr id='dayRowHeal"+i+"'></tr>");
-            var $row = $("#dayRowHeal"+i);
+            $dayHealTable.append("<tr id='dayRowHeal"+dayHeals[i].name+"'></tr>");
+
             $.ajax({
                 url:"https://us.api.battle.net/wow/character/"+dayHeals[i].server+"/"+dayHeals[i].name,
                 data:{"locale":"en_US", "apikey":"seegnhzdsayxgag54ue4neg484n2eggj", "fields": "items,talents"},
-                async:false
+                //async:false
             })
             .done(function(results){
                 console.log(results);
+                var $row = $("#dayRowHeal"+results.name);
                 $row.append("<td><img src='http://render-api-us.worldofwarcraft.com/static-render/us/"+results.thumbnail+"' id='playerIMG'></img><p id='playerName'>"+results.name+"</p></td>");
                 $row.append("<td><img src='iconpng/"+results.class+".png'></img></td>");
                 $row.append("<td><p>"+results.talents[0].spec.name+"</p></td>");
@@ -147,15 +149,16 @@
     var loadDayDPS = function(){
         var tableLength = dayDPS.length;
         for(var i = 0; i< tableLength; i++){
-            $dayDPSTable.append("<tr id='dayRowDPS"+i+"'></tr>");
-            var $row = $("#dayRowDPS"+i);
+            $dayDPSTable.append("<tr id='dayRowDPS"+dayDPS[i].name+"'></tr>");
+
             $.ajax({
                 url:"https://us.api.battle.net/wow/character/"+dayDPS[i].server+"/"+dayDPS[i].name,
                 data:{"locale":"en_US", "apikey":"seegnhzdsayxgag54ue4neg484n2eggj", "fields": "items,talents"},
-                async:false
+                //async:false
             })
             .done(function(results){
                 console.log(results);
+                var $row = $("#dayRowDPS"+results.name);
                 $row.append("<td><img src='http://render-api-us.worldofwarcraft.com/static-render/us/"+results.thumbnail+"' id='playerIMG'></img><p id='playerName'>"+results.name+"</p></td>");
                 $row.append("<td><img src='iconpng/"+results.class+".png'></img></td>");
                 $row.append("<td><p>"+results.talents[0].spec.name+"</p></td>");
@@ -168,15 +171,16 @@
     var loadNightTanks = function(){
         var tableLength = nightTanks.length;
         for(var i = 0; i< tableLength; i++){
-            $nightTankTable.append("<tr id='nightRowTank"+i+"'></tr>");
-            var $row = $("#nightRowTank"+i);
+            $nightTankTable.append("<tr id='nightRowTank"+nightTanks[i].name+"'></tr>");
+
             $.ajax({
                 url:"https://us.api.battle.net/wow/character/"+nightTanks[i].server+"/"+nightTanks[i].name,
                 data:{"locale":"en_US", "apikey":"seegnhzdsayxgag54ue4neg484n2eggj", "fields": "items,talents"},
-                async:false
+                //async:false
             })
             .done(function(results){
                 console.log(results);
+                var $row = $("#nightRowTank"+results.name);
                 $row.append("<td><img src='http://render-api-us.worldofwarcraft.com/static-render/us/"+results.thumbnail+"' id='playerIMG'></img><p id='playerName'>"+results.name+"</p></td>");
                 $row.append("<td><img src='iconpng/"+results.class+".png'></img></td>");
                 $row.append("<td><p>"+results.talents[0].spec.name+"</p></td>");
@@ -188,15 +192,16 @@
     var loadNightHeals = function(){
         var tableLength = nightHeals.length;
         for(var i = 0; i< tableLength; i++){
-            $nightHealTable.append("<tr id='nightRowHeal"+i+"'></tr>");
-            var $row = $("#nightRowHeal"+i);
+            $nightHealTable.append("<tr id='nightRowHeal"+nightHeals[i].name+"'></tr>");
+            //var $row = $("#nightRowHeal"+nightHeals[i].name);
             $.ajax({
                 url:"https://us.api.battle.net/wow/character/"+nightHeals[i].server+"/"+nightHeals[i].name,
                 data:{"locale":"en_US", "apikey":"seegnhzdsayxgag54ue4neg484n2eggj", "fields": "items,talents"},
-                async:false
+                //async:false
             })
             .done(function(results){
                 console.log(results);
+                var $row = $("#nightRowHeal"+results.name);
                 $row.append("<td><img src='http://render-api-us.worldofwarcraft.com/static-render/us/"+results.thumbnail+"' id='playerIMG'></img><p id='playerName'>"+results.name+"</p></td>");
                 $row.append("<td><img src='iconpng/"+results.class+".png'></img></td>");
                 $row.append("<td><p>"+results.talents[0].spec.name+"</p></td>");
@@ -208,15 +213,16 @@
     var loadNightDPS = function(){
         var tableLength = nightDPS.length;
         for(var i = 0; i< tableLength; i++){
-            $nightDPSTable.append("<tr id='nightRowDPS"+i+"'></tr>");
-            var $row = $("#nightRowDPS"+i);
+            $nightDPSTable.append("<tr id='nightRowDPS"+nightDPS[i].name+"'></tr>");
+            //var $row = $("#nightRowDPS"+nightDPS[i].name);
             $.ajax({
                 url:"https://us.api.battle.net/wow/character/"+nightDPS[i].server+"/"+nightDPS[i].name,
                 data:{"locale":"en_US", "apikey":"seegnhzdsayxgag54ue4neg484n2eggj", "fields": "items,talents"},
-                async:false
+                //async:false
             })
             .done(function(results){
                 console.log(results);
+                var $row = $("#nightRowDPS"+results.name);
                 $row.append("<td><img src='http://render-api-us.worldofwarcraft.com/static-render/us/"+results.thumbnail+"' id='playerIMG'></img><p id='playerName'>"+results.name+"</p></td>");
                 $row.append("<td><img src='iconpng/"+results.class+".png'></img></td>");
                 $row.append("<td><p>"+results.talents[0].spec.name+"</p></td>");
