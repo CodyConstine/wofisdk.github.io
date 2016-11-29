@@ -18,23 +18,24 @@
                     {"name":"Thárros", "server":"Sen'Jin"},
                     {"name":"Whiteppl", "server":"Quel'dorei"},];
 
-    var nightHeals = [{"name":"Ecnivuss", "server":"Sen'Jin"},
-                    {"name":"Krynoob", "server":"Sen'Jin"},
-                    {"name":"Showenuf", "server":"Sen'Jin"},];
+    var nightHeals = [{"name":"Dímmåk", "server":"Sen'Jin"},
+                    {"name":"Fizzywiznik", "server":"Sen'Jin"},
+                    {"name":"Groroy", "server":"Sen'Jin"},
+                    {"name":"Loonz", "server":"Sen'Jin"},];
 
-    var nightTanks = [{"name":"Almerin", "server":"Quel'dorei"},
-                    {"name":"Coltraine", "server":"Sen'Jin"},
-                    {"name":"Sylithria", "server":"Quel'dorei"},];
+    var nightTanks = [{"name":"Liliia", "server":"Quel'dorei"},
+                    {"name":"Omnipresent", "server":"Sen'Jin"},
+                    {"name":"Wofisdk", "server":"Quel'dorei"},];
 
-    var nightDPS = [{"name":"Casja", "server":"Sen'Jin"},
-                    {"name":"Chowderspoon", "server":"Quel'dorei"},
-                    {"name":"Galmar", "server":"Quel'dorei"},
-                    {"name":"Iaime", "server":"Sen'Jin"},
-                    {"name":"Rusion", "server":"Sen'Jin"},
-                    {"name":"Sekken", "server":"Quel'dorei"},
-                    {"name":"Shyläh", "server":"Sen'Jin"},
-                    {"name":"Thárros", "server":"Sen'Jin"},
-                    {"name":"Whiteppl", "server":"Quel'dorei"},];
+    var nightDPS = [{"name":"Amoristo", "server":"Sen'Jin"},
+                    {"name":"Buckfever", "server":"Quel'dorei"},
+                    {"name":"Hammrtime", "server":"Sen'Jin"},
+                    {"name":"Kríg", "server":"Sen'Jin"},
+                    {"name":"Morniel", "server":"Quel'dorei"},
+                    {"name":"Nawtprepared", "server":"Quel'dorei"},
+                    {"name":"Omgitsdenden", "server":"Quel'dorei"},
+                    {"name":"Railog", "server":"Quel'dorei"},
+                    {"name":"Silentshanx", "server":"Sen'Jin"},];
 
     var $homePage = null;
     var $dayPage = null;
