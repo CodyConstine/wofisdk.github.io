@@ -18,6 +18,24 @@
                     {"name":"Thárros", "server":"Sen'Jin"},
                     {"name":"Whiteppl", "server":"Quel'dorei"},];
 
+    var nightHeals = [{"name":"Ecnivuss", "server":"Sen'Jin"},
+                    {"name":"Krynoob", "server":"Sen'Jin"},
+                    {"name":"Showenuf", "server":"Sen'Jin"},];
+
+    var nightTanks = [{"name":"Almerin", "server":"Quel'dorei"},
+                    {"name":"Coltraine", "server":"Sen'Jin"},
+                    {"name":"Sylithria", "server":"Quel'dorei"},];
+
+    var nightDPS = [{"name":"Casja", "server":"Sen'Jin"},
+                    {"name":"Chowderspoon", "server":"Quel'dorei"},
+                    {"name":"Galmar", "server":"Quel'dorei"},
+                    {"name":"Iaime", "server":"Sen'Jin"},
+                    {"name":"Rusion", "server":"Sen'Jin"},
+                    {"name":"Sekken", "server":"Quel'dorei"},
+                    {"name":"Shyläh", "server":"Sen'Jin"},
+                    {"name":"Thárros", "server":"Sen'Jin"},
+                    {"name":"Whiteppl", "server":"Quel'dorei"},];
+
     var $homePage = null;
     var $dayPage = null;
     var $nightPage = null;
@@ -31,6 +49,10 @@
     var $dayTankTable = null;
     var $dayHealTable = null;
     var $dayDPSTable = null;
+
+    var $nightTankTable = null;
+    var $nightHealTable = null;
+    var $nightDPSTable = null;
 
     var goToHome = function(){
         $homePage.show();
@@ -142,6 +164,67 @@
     };
 
 
+    var loadNightTanks = function(){
+        var tableLength = nightTanks.length;
+        for(var i = 0; i< tableLength; i++){
+            $nightTankTable.append("<tr id='nightRowTank"+i+"'></tr>");
+            var $row = $("#nightRowTank"+i);
+            $.ajax({
+                url:"https://us.api.battle.net/wow/character/"+nightTanks[i].server+"/"+nightTanks[i].name,
+                data:{"locale":"en_US", "apikey":"seegnhzdsayxgag54ue4neg484n2eggj", "fields": "items,talents"},
+                async:false
+            })
+            .done(function(results){
+                console.log(results);
+                $row.append("<td><img src='http://render-api-us.worldofwarcraft.com/static-render/us/"+results.thumbnail+"' id='playerIMG'></img><p id='playerName'>"+results.name+"</p></td>");
+                $row.append("<td><img src='iconpng/"+results.class+".png'></img></td>");
+                $row.append("<td><p>"+results.talents[0].spec.name+"</p></td>");
+                $row.append("<td><p>"+results.items.averageItemLevelEquipped+"</p></td>");
+            });
+        }
+    };
+
+    var loadNightHeals = function(){
+        var tableLength = nightHeals.length;
+        for(var i = 0; i< tableLength; i++){
+            $nightHealTable.append("<tr id='nightRowHeal"+i+"'></tr>");
+            var $row = $("#nightRowHeal"+i);
+            $.ajax({
+                url:"https://us.api.battle.net/wow/character/"+nightHeals[i].server+"/"+nightHeals[i].name,
+                data:{"locale":"en_US", "apikey":"seegnhzdsayxgag54ue4neg484n2eggj", "fields": "items,talents"},
+                async:false
+            })
+            .done(function(results){
+                console.log(results);
+                $row.append("<td><img src='http://render-api-us.worldofwarcraft.com/static-render/us/"+results.thumbnail+"' id='playerIMG'></img><p id='playerName'>"+results.name+"</p></td>");
+                $row.append("<td><img src='iconpng/"+results.class+".png'></img></td>");
+                $row.append("<td><p>"+results.talents[0].spec.name+"</p></td>");
+                $row.append("<td><p>"+results.items.averageItemLevelEquipped+"</p></td>");
+            });
+        }
+    };
+
+    var loadNightDPS = function(){
+        var tableLength = nightDPS.length;
+        for(var i = 0; i< tableLength; i++){
+            $nightDPSTable.append("<tr id='nightRowDPS"+i+"'></tr>");
+            var $row = $("#nightRowDPS"+i);
+            $.ajax({
+                url:"https://us.api.battle.net/wow/character/"+nightDPS[i].server+"/"+nightDPS[i].name,
+                data:{"locale":"en_US", "apikey":"seegnhzdsayxgag54ue4neg484n2eggj", "fields": "items,talents"},
+                async:false
+            })
+            .done(function(results){
+                console.log(results);
+                $row.append("<td><img src='http://render-api-us.worldofwarcraft.com/static-render/us/"+results.thumbnail+"' id='playerIMG'></img><p id='playerName'>"+results.name+"</p></td>");
+                $row.append("<td><img src='iconpng/"+results.class+".png'></img></td>");
+                $row.append("<td><p>"+results.talents[0].spec.name+"</p></td>");
+                $row.append("<td><p>"+results.items.averageItemLevelEquipped+"</p></td>");
+            });
+        }
+    };
+
+
     $( document ).ready(function() {
         $homePage = $("#homePage");
         $dayPage = $("#dayPage");
@@ -157,6 +240,10 @@
         $dayHealTable = $("#dayHealTable");
         $dayDPSTable = $("#dayDPSTable");
 
+        $nightTankTable = $("#nightTankTable");
+        $nightHealTable = $("#nightHealTable");
+        $nightDPSTable = $("#nightDPSTable");
+
         goToHome();
 
         $homeTab.on("click", goToHome);
@@ -168,5 +255,9 @@
         loadDayTanks();
         loadDayHeals();
         loadDayDPS();
+
+        loadNightTanks();
+        loadNightHeals();
+        loadNightDPS();
     });
 }(jQuery));
