@@ -80,12 +80,24 @@
         $recruitTab.parent().addClass("active");
     };
 
+
     var loadDayTanks = function(){
         var tableLength = dayTanks.length;
         for(var i = 0; i< tableLength; i++){
             $dayTankTable.append("<tr id='dayRowTank"+i+"'></tr>");
             var $row = $("#dayRowTank"+i);
-            $row.append("<td>"+dayTanks[i].name+"</td>");
+            $.ajax({
+                url:"https://us.api.battle.net/wow/character/"+dayTanks[i].server+"/"+dayTanks[i].name,
+                data:{"locale":"en_US", "apikey":"seegnhzdsayxgag54ue4neg484n2eggj", "fields": "items,talents"},
+                async:false
+            })
+            .done(function(results){
+                console.log(results);
+                $row.append("<td><img src='http://render-api-us.worldofwarcraft.com/static-render/us/"+results.thumbnail+"' id='playerIMG'></img><p id='playerName'>"+results.name+"</p></td>");
+                $row.append("<td><img src='iconpng/"+results.class+".png'></img></td>");
+                $row.append("<td><p>"+results.talents[0].spec.name+"</p></td>");
+                $row.append("<td><p>"+results.items.averageItemLevelEquipped+"</p></td>");
+            });
         }
     };
 
@@ -94,7 +106,18 @@
         for(var i = 0; i< tableLength; i++){
             $dayHealTable.append("<tr id='dayRowHeal"+i+"'></tr>");
             var $row = $("#dayRowHeal"+i);
-            $row.append("<td>"+dayHeals[i].name+"</td>");
+            $.ajax({
+                url:"https://us.api.battle.net/wow/character/"+dayHeals[i].server+"/"+dayHeals[i].name,
+                data:{"locale":"en_US", "apikey":"seegnhzdsayxgag54ue4neg484n2eggj", "fields": "items,talents"},
+                async:false
+            })
+            .done(function(results){
+                console.log(results);
+                $row.append("<td><img src='http://render-api-us.worldofwarcraft.com/static-render/us/"+results.thumbnail+"' id='playerIMG'></img><p id='playerName'>"+results.name+"</p></td>");
+                $row.append("<td><img src='iconpng/"+results.class+".png'></img></td>");
+                $row.append("<td><p>"+results.talents[0].spec.name+"</p></td>");
+                $row.append("<td><p>"+results.items.averageItemLevelEquipped+"</p></td>");
+            });
         }
     };
 
@@ -103,7 +126,18 @@
         for(var i = 0; i< tableLength; i++){
             $dayDPSTable.append("<tr id='dayRowDPS"+i+"'></tr>");
             var $row = $("#dayRowDPS"+i);
-            $row.append("<td>"+dayDPS[i].name+"</td>");
+            $.ajax({
+                url:"https://us.api.battle.net/wow/character/"+dayDPS[i].server+"/"+dayDPS[i].name,
+                data:{"locale":"en_US", "apikey":"seegnhzdsayxgag54ue4neg484n2eggj", "fields": "items,talents"},
+                async:false
+            })
+            .done(function(results){
+                console.log(results);
+                $row.append("<td><img src='http://render-api-us.worldofwarcraft.com/static-render/us/"+results.thumbnail+"' id='playerIMG'></img><p id='playerName'>"+results.name+"</p></td>");
+                $row.append("<td><img src='iconpng/"+results.class+".png'></img></td>");
+                $row.append("<td><p>"+results.talents[0].spec.name+"</p></td>");
+                $row.append("<td><p>"+results.items.averageItemLevelEquipped+"</p></td>");
+            });
         }
     };
 

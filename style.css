@@ -34,6 +34,8 @@ th{
 }
 td{
     text-align: center;
+    background-color: black;
+    color: white;
 }
 table{
     width: 100%;
@@ -42,7 +44,5 @@ table{
     float:left;
 }
 #playerName{
-    float:right;
-    vertical-align: middle;
-    height:100%;
+
 }
