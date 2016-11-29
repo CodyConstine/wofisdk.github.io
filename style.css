@@ -38,3 +38,11 @@ td{
 table{
     width: 100%;
 }
+#playerIMG{
+    float:left;
+}
+#playerName{
+    float:right;
+    vertical-align: middle;
+    height:100%;
+}

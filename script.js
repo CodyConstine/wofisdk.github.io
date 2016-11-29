@@ -28,6 +28,9 @@
     var $nightTab = null;
     var $recruitTab = null;
 
+    var $dayTankTable = null;
+    var $dayHealTable = null;
+    var $dayDPSTable = null;
 
     var goToHome = function(){
         $homePage.show();
@@ -77,6 +80,34 @@
         $recruitTab.parent().addClass("active");
     };
 
+    var loadDayTanks = function(){
+        var tableLength = dayTanks.length;
+        for(var i = 0; i< tableLength; i++){
+            $dayTankTable.append("<tr id='dayRowTank"+i+"'></tr>");
+            var $row = $("#dayRowTank"+i);
+            $row.append("<td>"+dayTanks[i].name+"</td>");
+        }
+    };
+
+    var loadDayHeals = function(){
+        var tableLength = dayHeals.length;
+        for(var i = 0; i< tableLength; i++){
+            $dayHealTable.append("<tr id='dayRowHeal"+i+"'></tr>");
+            var $row = $("#dayRowHeal"+i);
+            $row.append("<td>"+dayHeals[i].name+"</td>");
+        }
+    };
+
+    var loadDayDPS = function(){
+        var tableLength = dayDPS.length;
+        for(var i = 0; i< tableLength; i++){
+            $dayDPSTable.append("<tr id='dayRowDPS"+i+"'></tr>");
+            var $row = $("#dayRowDPS"+i);
+            $row.append("<td>"+dayDPS[i].name+"</td>");
+        }
+    };
+
+
     $( document ).ready(function() {
         $homePage = $("#homePage");
         $dayPage = $("#dayPage");
@@ -88,11 +119,20 @@
         $nightTab = $("#nightTab");
         $recruitTab = $("#recruitTab");
 
+        $dayTankTable = $("#dayTankTable");
+        $dayHealTable = $("#dayHealTable");
+        $dayDPSTable = $("#dayDPSTable");
+
         goToHome();
 
         $homeTab.on("click", goToHome);
         $dayTab.on("click", goToDay);
         $nightTab.on("click", goToNight);
         $recruitTab.on("click", goToRecruit);
+
+
+        loadDayTanks();
+        loadDayHeals();
+        loadDayDPS();
     });
 }(jQuery));
